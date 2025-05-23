@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunil Kumar Nayak - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+    body{
+        background: linear-gradient(135deg,#0f2027, #203a43, #2c5364);
+        color: whitesmoke;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    /* Navbar styling */
+    .navbar{
+        background-color: rgba(15, 32, 39, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 255, 255, 0.3);
+    }
+    .navbar-brand{
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: #00f0ff !important;
+        letter-spacing: 1.5px;
+    }
+    .nav-link{
+        color: #00f0ff !important;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+    .nav-link:hover{
+        color: #00ffffcc !important;
+    }
+
+    /* Section titles */
+    h2.section-title{
+        color: #00f0ff;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    /* Home section */
+    .image{
+        background-image: url("");
+        background-color: #000;
+        height: 50rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    #home{
+        
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 4rem 1rem;
+        animation: fadeInup 1.2s ease forwards;
+    }
+    #home h1{
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #00f0ff;
+        text-shadow: 0 0 10px #00f0ff;
+    }
+    #home p{
+        max-width: 600px;
+        font-size: 1.2rem;
+        color: #c0e8e8;
+        margin-bottom: 2rem;
+    }
+    #home .btn-primary{
+        background-color: #00f0ff;
+        color: #000;
+        font-weight: 700;
+        padding: 12px 30px;
+        border-radius: 50px;
+        box-shadow: 0 0 20px #00f0ffaa;
+        transition: background-color 0.3s ease;
+    }
+    #home .btn-primary:hover{
+        background-color: #00c5cc;
+        color: whitesmoke;
+        box-shadow: 0 0 30px #00c5cc;
+    }
+
+    /* Skills */
+    .skill-name{
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #00f0ff;
+        letter-spacing: 1px;
+    }
+    .progress{
+        height: 20px;
+        background-color: #203a43;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 0 10px #00f0ff44 inset;
+    }
+    .progress-bar{
+        background: linear-gradient(90deg, #00f0ff, #00c5cc);
+        width: 0;
+      transition: width 2s ease;
+    }
+
+     /* Projects */
+     .project-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px #00f0ff;
+    }
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #00f0ff;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-image {
+      transform: scale(1.1);
+    }
+    .project-content {
+      padding: 15px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-title {
+      color: #00f0ff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .project-description {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+    .project-link {
+      align-self: flex-start;
+      color: #00f0ff;
+      font-weight: 600;
+      border: 1.5px solid #00f0ff;
+      padding: 6px 16px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .project-link:hover {
+      background-color: #00f0ff;
+      color: #000;
+    }
+
+      /* Contact */
+    #contact {
+      text-align: center;
+      padding: 3rem 1rem 5rem;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      color: #c0e8e8;
+      margin-bottom: 0.5rem;
+    }
+    #contact a.btn-primary {
+      margin-top: 1rem;
+      background-color: #00f0ff;
+      border-radius: 50px;
+      color: #000;
+      font-weight: 700;
+      padding: 12px 30px;
+      box-shadow: 0 0 20px #00f0ffaa;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    #contact a.btn-primary:hover {
+      background-color: #00c5cc;
+      color: white;
+      box-shadow: 0 0 30px #00c5cc;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Fade in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+</style>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#home">Sunil Kumar Nayak</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- home section -->
+       <div class="image">
+      <section id="home" class="d-flex flex-column justify-content-center align-items-center">
+        <h1>Hello, I'm Sunil Kumar Nayak</h1>
+        <p>
+            I'm a passionate developer focused on creating beautiful, functional, and modern web applications with smooth animations and intuitive interfaces.
+        </p>
+        <a href="#projects" class="btn btn-primary">See My Work</a>
+      </section>
+    </div>
+      <!-- Skills section -->
+      <section id="skills" class="container py-5 fade-in">
+        <h2 class="section-title">My Skills</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skill-name">HTML</div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="95"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                data-progress="95"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skill-name">CSS</div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                data-progress="90"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skill-name">JAVASCRIPT</div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="85"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                data-progress="85"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skill-name">BOOTSTRAP</div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                data-progress="80"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skill-name">JQUARY</div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                data-progress="75"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project section -->
+      <section id="projects" class="container py-5 fade-in">
+        <h2 class="section-title">Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <img
+                src="stopwatch img.jpg"
+                alt="Portfolio Website"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Stop Watch</h3>
+                <p class="project-description">
+                  Stop Watch project built with HTML, CSS,
+                  and JavaScript.
+                </p>
+                <a
+                  href="https://sknayak07.github.io/stopwatch/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <img
+                src="shop img.jpg"
+                alt="E-Commerce App"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Online Shop</h3>
+                <p class="project-description">
+                  Online shopping app with HTML , CSS ,JAVASCRIPT
+            
+                </p>
+                <a
+                  href="https://sknayak07.github.io/onlineshoping/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                alt="Blog Platform"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">
+                  Modern personal portfolio website built with HTML, CSS,
+                    and JavaScript,Bootstrap.
+                </p>
+                <a
+                  href="index.html"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card h-100">
+              <img
+                src="bookstore img.jpg"
+                alt="Blog Platform"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Book Store</h3>
+                <p class="project-description">
+                   Create a Book Store project using Bootstrap.It is my first bootstrap project.
+                   
+                </p>
+                <a
+                  href="https://sknayak07.github.io/bookstore/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Project</a
+                >
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Contact section -->
+      <section id="contact" class="fade-in">
+        <h2 class="section-title">Contact Me</h2>
+        <p>Email: <a href="mailto:sunilnaya37@gmail.com" class="text-info">sunilnaya37@gmail.com</a></p>
+        <p>Phone: +91 63516 50863</p>
+        <a href="mailto:sunil.kumar.nayak@example.com" class="btn btn-primary">Send Email</a>
+      </section>
+
+
+      <script>
+        // Animate progress bars on scroll into view
+        function animateSkills() {
+      const bars = document.querySelectorAll('.progress-bar');
+      bars.forEach((bar) => {
+        const value = bar.getAttribute('data-progress');
+        bar.style.width = value + '%';
+      });
+    }
+
+    // Fade-in elements on scroll
+    function fadeInOnScroll() {
+      const fadeElems = document.querySelectorAll('.fade-in');
+      fadeElems.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    // When window scrolls
+    window.addEventListener('scroll', () => {
+      fadeInOnScroll();
+      // Animate skills only when skills section visible
+      const skillsSection = document.getElementById('skills');
+      const rect = skillsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        animateSkills();
+      }
+    });
+
+    // On load
+    window.addEventListener('load', () => {
+      fadeInOnScroll();
+      animateSkills();
+    });
+
+      </script>
+</body>
+
+</html>
